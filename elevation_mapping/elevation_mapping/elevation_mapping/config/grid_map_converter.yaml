@@ -1,0 +1,8 @@
+gridmap_converter:
+  ros__parameters:
+    layer: traversability
+    max_value_grid_map: 1.0
+    min_value_grid_map: 0.0
+    traversability_topic: /traversability_map
+    occupancy_map_topic: /traversability_occ_map
+

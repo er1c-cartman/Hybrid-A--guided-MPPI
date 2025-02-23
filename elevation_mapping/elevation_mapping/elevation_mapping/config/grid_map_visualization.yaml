@@ -1,0 +1,30 @@
+grid_map_visualization:
+  ros__parameters:
+    grid_map_topic: /traversability_map
+    grid_map_visualizations: [surface_normals, traversability_grid, slope, roughness] 
+    surface_normals:
+      type: vectors
+      params:
+        layer_prefix: normal_vectors_
+        position_layer: elevation
+        scale: 0.01
+        line_width: 0.01
+        color: 15600153 # red
+    traversability_grid:
+      type: occupancy_grid
+      params:
+        layer: traversability
+        data_min: 0.0
+        data_max: 1.0
+    slope:
+      type: occupancy_grid
+      params:
+        layer: slope
+        data_min: 0.0
+        data_max: 1.0
+    roughness:
+      type: occupancy_grid
+      params:
+        layer: roughness
+        data_min: 0.0
+        data_max: 1.0

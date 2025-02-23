@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="rock">
+    <static>true</static>
+    <link name="link">
+      <inertial>
+        <mass>10.0</mass>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://rock/meshes/rock.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh> 
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://rock/meshes/rock.dae</uri>
+            <scale>0.2 0.2 0.2</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <texture>
+            <image>model://rock/rock/meshes/1.png</image>
+          </texture>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

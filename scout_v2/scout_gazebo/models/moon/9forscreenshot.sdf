@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="moon">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>1</soft_cfm>
+              <kp>100000</kp>
+              <kd>1</kd>
+              <max_vel>0.000001</max_vel>
+              <min_depth>0.02</min_depth>
+            </ode>
+          </contact>
+        </surface>        
+          <geometry>
+            <heightmap>
+              <uri>model://moon/materials/heightmap/w1.png</uri>
+              <size>100 100 6</size>   <!-- 9-->
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </collision>
+        <visual name="visual_abcedf">
+          <cast_shadows>true</cast_shadows>
+          <geometry>
+            <heightmap>
+              <texture>
+                <diffuse>model://moon/materials/textures/ground_1.jpg</diffuse>
+                <normal>model://moon/materials/textures/ground_normal.jpg</normal>
+                <size>1</size>
+              </texture>
+              <uri>model://moon/materials/heightmap/w1.png</uri>
+              <size>100 100 6</size>
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+</sdf>

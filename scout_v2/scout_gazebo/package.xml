@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>scout_gazebo</name>
+  <version>1.0.3</version>
+  <description>Scout V2 Simulator bringup</description>
+
+  <author email="kim87@kimm.re.kr">Sanghyun Kim</author>
+  <maintainer email="kim87@kimm.re.kr">Sanghyun Kim</maintainer>
+
+  <license>BSD</license>
+
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>scout_description</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
