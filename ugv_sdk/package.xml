@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>ugv_sdk</name>
+  <version>0.1.6</version>
+  <description>Weston Robot Platform SDK</description>
+
+  <author email="ruixiang.du@westonrobot.com">Ruixiang Du</author>
+  <maintainer email="ruixiang.du@westonrobot.com">Ruixiang Du</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">https://www.westonrobot.com/</url>
+  <url type="bugtracker">https://github.com/westonrobot/ugv_sdk/issues</url>
+  <url type="repository">https://github.com/westonrobot/ugv_sdk</url>
+
+  <buildtool_depend>catkin</buildtool_depend> 
+  <build_depend>asio</build_depend>
+  <export></export>
+</package>

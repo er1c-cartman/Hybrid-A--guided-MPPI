@@ -1,0 +1,91 @@
+## Build and test as standard C++ package
+xenial-cpp-build:
+  stage: build
+  image: rduweston/ubuntu-ci:16.04
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir build && cd build
+    - cmake -DCMAKE_BUILD_TYPE=Release ..
+    - cmake --build . && cpack
+
+bionic-cpp-build:
+  stage: build
+  image: rduweston/ubuntu-ci:18.04
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir build && cd build
+    - cmake -DCMAKE_BUILD_TYPE=Release ..
+    - cmake --build . && cpack
+
+focal-cpp-build:
+  stage: build
+  image: rduweston/ubuntu-ci:20.04
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir build && cd build
+    - cmake -DCMAKE_BUILD_TYPE=Release ..
+    - cmake --build . && cpack
+
+## Build and test as catkin package
+kinetic-catkin-build:
+  stage: build
+  image: rduweston/ubuntu-ci:kinetic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make"
+
+kinetic-catkin-isolated-build:
+  stage: build
+  image: rduweston/ubuntu-ci:kinetic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make_isolated --install"
+
+melodic-catkin-build:
+  stage: build
+  image: rduweston/ubuntu-ci:melodic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make"
+
+melodic-catkin-isolated-build:
+  stage: build
+  image: rduweston/ubuntu-ci:melodic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make_isolated --install"
+
+noetic-catkin-build:
+  stage: build
+  image: rduweston/ubuntu-ci:noetic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make"
+
+noetic-catkin-isolated-build:
+  stage: build
+  image: rduweston/ubuntu-ci:noetic
+  before_script:
+    - apt update && apt -y install libasio-dev
+  script:
+    - mkdir -p /catkin_ws/src/ugv_sdk && cd /catkin_ws/src && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_init_workspace"
+    - cp -r /builds/$CI_PROJECT_PATH /catkin_ws/src/ugv_sdk
+    - cd /catkin_ws && /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; catkin_make_isolated --install"

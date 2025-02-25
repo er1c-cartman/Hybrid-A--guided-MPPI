@@ -1,0 +1,16 @@
+custom_pointcloud_filter_node:
+  ros__parameters:
+    input_topic: "/livox/lidar"
+    output_topic: "/livox/lidar1"
+    distance_threshold: 0.2                 # Minimum distance to filter points
+    max_distance: 200.0                     # Maximum distance to keep points
+
+    # XY angle filters (specify the angle ranges you want to filter)
+    angle_filters: [-3.3, -2.1, 2.1, 3.3] # XY plane angle filters in radians
+
+    # Robot body dimensions for filtering (blue box)
+    robot_min_x: -0.0                       # Minimum X boundary of the robot body (meters)
+    robot_max_x: 0.0                        # Maximum X boundary of the robot body (meters)
+    robot_min_y: -0.0                       # Minimum Y boundary of the robot body (meters)
+    robot_max_y: 0.0                        # Maximum Y boundary of the robot body (meters)
+

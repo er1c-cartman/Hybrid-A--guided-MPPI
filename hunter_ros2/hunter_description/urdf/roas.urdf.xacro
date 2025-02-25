@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hunter">
+
+  <xacro:include filename="$(find hunter_description)/urdf/include/l515.urdf.xacro" />
+  <material name="frame_color"> <color rgba="0.3 0.3 0.3 1" /> </material>
+  <!-- Frame -->
+  <link name="top_structure">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hunter_description/meshes/frame.stl" />
+      </geometry>
+      <material name="frame_color"/>
+    </visual>
+
+        
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://hunter_description/meshes/frame.stl" />
+      </geometry>
+      <material name="frame_color"/>
+    </collision>
+  </link>
+
+  <joint name="top_structure_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="top_structure" />
+    <origin xyz="0 0 -0.251" rpy="0 0 0" />
+  </joint>
+  
+
+  <!-- Camera -->
+  <xacro:sensor_l515 parent="top_structure" name="camera">
+    <origin xyz="0.381 0 0.284" rpy="0 0 0"/>
+  </xacro:sensor_l515>
+  
+  <!-- IMU -->
+  <link name="imu">
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="top_structure" />
+    <child link="imu" />
+    <origin xyz="-0.265 0 0.275" rpy="0 0 0" />
+  </joint>
+  
+  <!--  <link name="livox_frame">
+  </link>
+
+  <joint name="livox_frame_joint" type="fixed">
+    <parent link="top_structure" />
+    <child link="livox_frame" />
+    <origin xyz="-0.183 0 0.583" rpy="0 0 0" />
+  </joint>-->
+
+
+  
+</robot>

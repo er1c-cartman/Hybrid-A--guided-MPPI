@@ -1,0 +1,2 @@
+add_executable(demo_hunter_robot hunter_robot_demo.cpp)
+target_link_libraries(demo_hunter_robot ugv_sdk)
