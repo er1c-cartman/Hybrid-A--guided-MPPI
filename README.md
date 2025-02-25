@@ -28,6 +28,10 @@ And run the simulation with
 <img alt="Lunar Simulation Example" src="scout_v2/scout_gazebo/doc/lunar.png" width="700">
 
 
+or run the simulation with
+	
+     ros2 launch scout_gazebo local.py
+
 
 # Elevation mapping with traversability estimation
 
@@ -68,3 +72,16 @@ Our proposed framework is illustrated below.
 The comparison of path generation with standard MPPI is presented below.
 
 <img alt="Lunar Simulation Example" src="scout_v2/scout_gazebo/doc/compare.png" width="700">
+
+
+# Experiment
+
+For the experiment, check this file
+
+    cd your_workspace/src/result
+    local.py & moon.py
+    
+    
+# Real robot
+
+For the real robot setting, check robot branch

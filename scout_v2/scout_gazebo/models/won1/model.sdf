@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="won1">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://won1/meshes/won1.dae</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh> 
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://won1/meshes/won1.dae</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh> 
+        </geometry>
+        <material>
+          <ambient>1 1 1 1</ambient> <!-- White color -->
+          <diffuse>1 1 1 1</diffuse> <!-- White color -->
+          <specular>0.5 0.5 0.5 1</specular> <!-- Neutral specular reflection -->
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
+
